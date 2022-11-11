@@ -2,10 +2,39 @@
   "name": "@expoplatformportal/hooks",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "release": "np"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akbar1909/expoplatform-hooks.git"
+  },
+  "keywords": [
+    "hooks",
+    "custom hooks",
+    "react hooks",
+    "util hooks",
+    "page",
+    "size",
+    "pagination"
+  ],
+  "files": [
+    "dist/**/*"
+  ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Akbar1909/expoplatform-hooks.git/issues"
+  },
+  "homepage": "https://github.com/Akbar1909/expoplatform-hooks.git#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "typescript": "^4.8.4"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.25",
+    "np": "^7.6.2"
+  }
 }
