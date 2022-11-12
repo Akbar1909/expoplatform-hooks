@@ -6,10 +6,10 @@ The simple react custom hooks are aimed to make the building process is esier an
 
 ## Acknowledgements
 
-- [usePagination](#use-pagination)
-- [useDebounce](#use-debounce)
-- [useInput](#use-input)
-- [useInterval](#use-interval)
+- [usePagination](#user-content--usepagination)
+- [useDebounce](#user-content--usedebounce)
+- [useInput](#user-content--useinput)
+- [useInterval](#user-content--useinterval)
 
 ## Installation
 
@@ -88,7 +88,7 @@ function App() {
 | `filter`       | `{order:'asc', search:'', ...}`                                  | **Optional** |
 | `initialState` | `{list:{},page:1,limit:4, total:0, filters:{},isFetching:false}` | **Optional** |
 
-#### <a name="use-debounce"></a><a name="user-content--usedebounce"> useDebounce
+#### <a name="use-debounce"></a><a name="user-content--usedebounce"></a> useDebounce
 
 ```javascript
 function App() {
@@ -108,7 +108,7 @@ function App() {
 | `search`  | `string` | **Required**                                 |
 | `time`    | `number` | **Optional** the delay time, _default_: _1s_ |
 
-#### <a name="use-input"></a><a name="user-content--useinput"> useInput
+#### <a name="use-input"></a><a name="user-content--useinput"></a> useInput
 
 ```javascript
 function App() {
@@ -122,7 +122,7 @@ function App() {
 | :------------- | :------- | :---------------------------------------------------------- |
 | `initialValue` | `string` | **Required** this is used as a initial value. _default_: '' |
 
-#### <a name="use-interval"></a><a name="user-content--useinterval"> useInterval
+#### <a name="use-interval"></a><a name="user-content--useinterval"></a> useInterval
 
 ```javascript
 function App() {
