@@ -7,9 +7,9 @@ The simple react custom hooks are aimed to make the building process is esier an
 ## Acknowledgements
 
 - [usePagination](#use-pagination)
-- [useDebounce](#useDebounce)
-- [useInput](#useInput)
-- [useInterval](#useInterval)
+- [useDebounce](#use-debounce)
+- [useInput](#use-input)
+- [useInterval](#use-interval)
 
 ## Installation
 
