@@ -16,7 +16,7 @@ Install the package with npm, yarn
 ```bash
   npm install @expoplatformportal/hooks
 
-  yarn add @xpoplatformportal/hooks
+  yarn add @expoplatformportal/hooks
 ```
 
 ## Running Tests
@@ -38,8 +38,15 @@ To run tests, run the following command
 ```javascript
 import { usePagination } from '@expoplatformportal/hooks'
 
+const filters={order:'asc'};
+const newState={
+  page:1,
+  limit:4,
+  ...
+}
+
 function App() {
-  const { list, page, number, total, filters, isFetching } = usePagination()
+  const { list, page, number, total, filters, isFetching } = usePagination(filters, newState)
 
   return <Component />
 }
@@ -49,10 +56,10 @@ function App() {
 
 #### usePagination
 
-| Parameter      | Type                            | Description  |
-| :------------- | :------------------------------ | :----------- |
-| `filter`       | `{order:'asc', search:'', ...}` | **Optional** |
-| `initialState` | `object`                        | **Optional** |
+| Parameter      | Type                                                             | Description  |
+| :------------- | :--------------------------------------------------------------- | :----------- |
+| `filter`       | `{order:'asc', search:'', ...}`                                  | **Optional** |
+| `initialState` | `{list:{},page:1,limit:4, total:0, filters:{},isFetching:false}` | **Optional** |
 
 #### useDebounce
 

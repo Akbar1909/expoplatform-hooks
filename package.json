@@ -20,9 +20,6 @@
     "size",
     "pagination"
   ],
-  "files": [
-    "dist/**/*"
-  ],
   "author": "",
   "license": "ISC",
   "bugs": {
