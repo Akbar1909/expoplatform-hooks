@@ -29,7 +29,7 @@ To run tests, run the following command
 
 ## Usage/Examples
 
-#### <a href="use-pagination"></a> usePagination
+#### <a name="use-pagination"></a> usePagination
 
 ####
 
