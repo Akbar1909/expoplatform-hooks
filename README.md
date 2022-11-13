@@ -10,6 +10,7 @@ The simple react custom hooks are aimed to make the building process is esier an
 - [useDebounce](#user-content--usedebounce)
 - [useInput](#user-content--useinput)
 - [useInterval](#user-content--useinterval)
+- [useAbortController](#user-content-useabortcontroller)
 
 ## Installation
 
@@ -83,10 +84,10 @@ function App() {
 }
 ```
 
-| Parameter      | Type                                                             | Description  |
-| :------------- | :--------------------------------------------------------------- | :----------- |
-| `filter`       | `{order:'asc', search:'', ...}`                                  | **Optional** |
-| `initialState` | `{list:{},page:1,limit:4, total:0, filters:{},isFetching:false}` | **Optional** |
+| Parameter      | Type                                                             | Description                                   |
+| :------------- | :--------------------------------------------------------------- | :-------------------------------------------- |
+| `filter`       | `{order:'asc', search:'', ...}`                                  | **<span style="color:green">Optional</span>** |
+| `initialState` | `{list:{},page:1,limit:4, total:0, filters:{},isFetching:false}` | **<span style="color:green">Optional</span>** |
 
 #### <a name="use-debounce"></a><a name="user-content--usedebounce"></a> useDebounce
 
@@ -103,10 +104,10 @@ function App() {
 }
 ```
 
-| Parameter | Type     | Description                                  |
-| :-------- | :------- | :------------------------------------------- |
-| `search`  | `string` | **Required**                                 |
-| `time`    | `number` | **Optional** the delay time, _default_: _1s_ |
+| Parameter | Type     | Description                                                                                                 |
+| :-------- | :------- | :---------------------------------------------------------------------------------------------------------- |
+| `search`  | `string` | **<span style="color:red">Required</span>**                                                                 |
+| `time`    | `number` | **<span style="color:green">Optional</span>** the delay time, _default_: <span style="color:blue">1s</span> |
 
 #### <a name="use-input"></a><a name="user-content--useinput"></a> useInput
 
@@ -118,9 +119,9 @@ function App() {
 }
 ```
 
-| Parameter      | Type     | Description                                                 |
-| :------------- | :------- | :---------------------------------------------------------- |
-| `initialValue` | `string` | **Required** this is used as a initial value. _default_: '' |
+| Parameter      | Type     | Description                                                                                                                |
+| :------------- | :------- | :------------------------------------------------------------------------------------------------------------------------- |
+| `initialValue` | `string` | **<span style="color:red">Required</span>** this is used as a initial value. _default_: <span style="color:blue">''</span> |
 
 #### <a name="use-interval"></a><a name="user-content--useinterval"></a> useInterval
 
@@ -136,7 +137,45 @@ function App() {
 }
 ```
 
-| Parameter  | Type       | Description               |
-| :--------- | :--------- | :------------------------ |
-| `callback` | `function` | **Required**              |
-| `delay`    | `number`   | **Optional** _default_:1s |
+| Parameter  | Type       | Description                                                                                |
+| :--------- | :--------- | :----------------------------------------------------------------------------------------- |
+| `callback` | `function` | **<span style="color:red">Required</span>**                                                |
+| `delay`    | `number`   | **<span style="color:green">Optional</span>** _default_:<span style="color:blue">1s</span> |
+
+#### <a name="use-abortcontroller"></a><a name="user-content--useabortcontroller"></a> useAbortController
+
+In default case, when the component is unmount, the endpoint will be aborted. If we don't want the endpoint to abort in unmount, we need to pass **isAbortonUnMount=false**: useAbortController(false)
+
+```javascript
+function App() {
+  const { signal, abort, regenerateController } = useAbortController();
+
+  useEffect(()=>{
+    fetch(endpointUrl, signal)
+  },[]);
+
+  return <Component>
+}
+```
+
+- If we want to abort with any kind of events, we can use abort function
+
+```javascript
+function App() {
+  const { signal, abort, regenerateController } = useAbortController()
+
+  useEffect(() => {
+    fetch(endpointUrl, signal)
+  }, [])
+
+  return (
+    <>
+      <button onClick={abort}>Cancel Request</button>
+    </>
+  )
+}
+```
+
+| Parameter          | Type      | Description                                                                                   |
+| :----------------- | :-------- | :-------------------------------------------------------------------------------------------- |
+| `isAbortonUnMount` | `boolean` | **<span style="color:green">Optional</span>** _default_: <span style="color:blue">true</span> |
