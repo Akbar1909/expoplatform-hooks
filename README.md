@@ -10,7 +10,7 @@ The simple react custom hooks are aimed to make the building process is esier an
 - [useDebounce](#user-content--usedebounce)
 - [useInput](#user-content--useinput)
 - [useInterval](#user-content--useinterval)
-- [useAbortController](#user-content-useabortcontroller)
+- [useAbortController](#user-content--useabortcontroller)
 
 ## Installation
 
